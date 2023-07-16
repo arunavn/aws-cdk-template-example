@@ -1,0 +1,16 @@
+{
+    "stackName": "test-stack",
+    "stackPrefix": "test",
+    "dev": {
+        "primaryRegion": "us-west-2",
+        "drRegion": "us-west-2"
+    },
+    "staging": {
+        "primaryRegion": "eu-central-1",
+        "drRegion": "us-west-2"
+    },
+    "prod": {
+        "primaryRegion": "ap-south-1",
+        "drRegion": "us-west-2"
+    }
+}
