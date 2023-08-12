@@ -12,4 +12,5 @@ class CdkAppStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
         # app_config_obj = app_config.Config()
-        sqs_service.create_test_sqs(stack=self)
+        sqs_service.create_basic_sqs(stack=self)
+        sqs_service.create_standard_queue(stack=self)

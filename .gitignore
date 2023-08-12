@@ -5,6 +5,7 @@ __pycache__
 .venv
 *.egg-info
 .tox
+.tmp
 
 # CDK asset staging directory
 .cdk.staging
