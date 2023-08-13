@@ -33,7 +33,10 @@ def create_sqs_policies(
     app_config_obj = app_config.Config()
     sqs_consume_policy = iam.Policy(
         stack,
-        app_config_obj.generate_resource_id(queue_label)
+        app_config_obj.generate_resource_id(queue_label),
+        policy_name=app_config_obj.generate_resource_name(
+                queue_label
+            )
     )
     queue.grant_consume_messages(sqs_consume_policy)
     return sqs_consume_policy
