@@ -17,12 +17,13 @@ class CdkAppStack(Stack):
         producer_bucket = s3_service.create_producer_bucket(
                 stack=self, dest_sqs=standard_queue
             )
-        _ = iam_service.create_sqs_policies(
+        consume_policy = iam_service.create_sqs_policies(
                 stack=self,
                 queue=standard_queue,
                 queue_label="standardqueue"
             )
         lambda_role = iam_service.create_lambda_role(stack=self)
+        consume_policy.attach_to_role(lambda_role)
         # Granting queue permission to the role
         standard_queue.grant_purge(lambda_role)
         standard_queue.grant_consume_messages(lambda_role)
