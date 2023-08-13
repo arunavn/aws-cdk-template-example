@@ -35,7 +35,7 @@ def create_sqs_policies(
         stack,
         app_config_obj.generate_resource_id(queue_label + 'consume'),
         policy_name=app_config_obj.generate_resource_name(
-                queue_label + 'consume' 
+                queue_label + 'consume'
             )
     )
     sqs_purge_policy = iam.Policy(
