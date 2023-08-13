@@ -33,4 +33,4 @@ class CdkAppStack(Stack):
         # Granting s3 permissions to the role
         producer_bucket.grant_read_write(lambda_role)
         producer_bucket.grant_delete(lambda_role)
-        _ = lambda_service.create_consumer_lambda(self, lambda_role)
+        _ = lambda_service.create_consumer_lambda(self, lambda_role, standard_queue)
